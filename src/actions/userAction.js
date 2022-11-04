@@ -1,7 +1,7 @@
 import axios from "axios"
 export const GET_DATA = 'GET_DATA';
 
-const setUser = () => dispatch => {
+const setUser = (e) => dispatch => {
     axios.get('https://demo1087320.mockable.io/products').then(res => {
         dispatch({
             type: "SET_USER",
@@ -10,7 +10,7 @@ const setUser = () => dispatch => {
     }).catch(err => {
         console.log(err);
     })
-    console.log("qwerqwe");
+    console.log("name:", e.name);
 }
 
 const logOut = () => {

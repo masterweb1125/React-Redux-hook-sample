@@ -12,7 +12,7 @@ const App = () => {
   const user = { name: "Rei" }
 
   useEffect(() => {
-    dispatch(allActions.userActions.setUser())
+    dispatch(allActions.userActions.setUser(user))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
