@@ -1,8 +1,16 @@
-const setUser = (userObj) => {
-    return {
-        type: "SET_USER",
-        payload: userObj
-    }
+import axios from "axios"
+export const GET_DATA = 'GET_DATA';
+
+const setUser = () => dispatch => {
+    axios.get('https://demo1087320.mockable.io/products').then(res => {
+        dispatch({
+            type: "SET_USER",
+            payload: res.data
+        })
+    }).catch(err => {
+        console.log(err);
+    })
+    console.log("qwerqwe");
 }
 
 const logOut = () => {

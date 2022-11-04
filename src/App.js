@@ -12,17 +12,18 @@ const App = () => {
   const user = { name: "Rei" }
 
   useEffect(() => {
-    dispatch(allActions.userActions.setUser(user))
+    dispatch(allActions.userActions.setUser())
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  console.log(currentUser.user)
   return (
 
     <div className="App">
       {
         currentUser.loggedIn ?
           <>
-            <h1>Hello, {currentUser.user.name}</h1>
+            <h1>Hello, {currentUser.user.length}</h1>
             <button onClick={() => dispatch(allActions.userActions.logOut())}>Logout</button>
           </>
           :
